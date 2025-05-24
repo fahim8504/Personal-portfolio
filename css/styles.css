@@ -3445,20 +3445,64 @@ img.u-pull-left {
 .about-expertise {
     padding-top : calc(6 * var(--space));
 }
+.about-expertise {
+    padding-top: calc(6 * var(--space));
+}
 
 .about-expertise .skills-list {
-    list-style  : none;
-    margin-top  : var(--vspace-1);
-    margin-left : 0;
+    list-style: none;
+    margin-top: var(--vspace-1);
+    margin-left: 0;
+    padding: 0;   
+    
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: 100px; /* rows adjust height automatically */
+  gap: 12px; /* space between items */
+}
+
+.about-expertise .skills-list li:hover {
+  color: #eabe7c;           /* example hover text color */
+  border-radius: 8px;
+  transform: scale(1.05); 
+  background: none;        /* no background box */
+  box-shadow: none;        /* no shadow */  /* slight zoom */
 }
 
 .about-expertise .skills-list li {
-    display      : inline-block;
-    padding-left : 0;
+      list-style: none;
+      height: auto;
+      transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+      grid-auto-flow: row;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: auto; /* rows adjust height automatically */
+  gap: 12px; /* space between items */
+}
+.skills-list li h3, .skills-list li span {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: inline-block;
 }
 
-.about-expertise .skills-list li:not(:last-child)::after {
-    content : ", ";
+
+.about-expertise .skills-list li::after {
+    content: none !important; /* Remove commas */
+}
+
+.skills-list li img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  object-fit: contain;
+  margin: 0;
+  vertical-align: middle;  /* just in case */
 }
 
 /* --------------------------------------------------------------------
